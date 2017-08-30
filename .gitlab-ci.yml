@@ -12,7 +12,7 @@ build:docker:latest:
     - docker info
     - docker login -u$DOCKER_HUB_USER -p$DOCKER_HUB_PASSWORD
     - docker build -t aohorodnyk/${PROJECT_NAME}:latest .
-    - DOCKER_VERSION_FULL=$(docker run -i aohorodnyk/${PROJECT_NAME}:latest aws --version 2>&1 | grep -o '[0-9\.]\+' | head -1 || true)
+    - DOCKER_VERSION_FULL=$(docker run -i aohorodnyk/${PROJECT_NAME}:latest hugo version | grep -o '[0-9\.]\+' | head -1 || true)
     - DOCKER_VERSION_MINOR=$(echo $DOCKER_VERSION_FULL | grep -o '[0-9]\+\.[0-9]\+' | head -1 || true)
     - DOCKER_VERSION_MAJOR=$(echo $DOCKER_VERSION_MINOR | grep -o '[0-9]\+' | head -1 || true)
     - docker push aohorodnyk/${PROJECT_NAME}:latest
