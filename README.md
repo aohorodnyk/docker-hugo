@@ -1,4 +1,4 @@
-# Minimalist AWS-Cli Docker Image
+# Minimalist HUGO Docker Image
 This docker image contains minimalist hugo build based on the alpine docker image.
 
 * [GitHub](https://github.com/aohorodnyk/docker-hugo)
